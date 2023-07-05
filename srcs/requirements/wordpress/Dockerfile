@@ -16,7 +16,7 @@ RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.ph
 
 RUN chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
 
-COPY    ./conf/www.conf    /etc/php/7.3/fpm/pool.d/www.conf
-COPY    ./tools/launch.sh launch.sh
+COPY    conf/www.conf	/etc/php/7.3/fpm/pool.d/www.conf
+COPY    tools/wordpress.sh	wordpress.sh
 
-ENTRYPOINT [ "bash", "launch.sh" ]
+ENTRYPOINT ["bash", "wordpress.sh"]
